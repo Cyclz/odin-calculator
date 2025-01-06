@@ -84,7 +84,7 @@ const operatorButtonPress = (buttonId) => {
         state.process = "entering b";
     } 
     // if a previous operator is waiting to execute (implying two values are ready), execute it with current values
-    else if (state.process === "entering b" && state.b !== "" && state.operatorBtnId) {
+    else if (state.process === "entering b" && state.a !== "" && state.b !== "" && state.operatorBtnId) {
         let result = operate();
         // update if NaN error doesn't exist
         console.log(result);
@@ -97,11 +97,6 @@ const operatorButtonPress = (buttonId) => {
             screen.textContent = "no, try again."
             state = {a: "", b: "", operatorBtnId: "", process: "entering a"}
         }
-    }
-    // if an equals was just pressed, and its waiting for an operator to be acted upon the result, set the operator
-    else if (state.process === "waiting for operator") {
-        state.process = "entering b";
-        state.operatorBtnId = buttonId;
     }
 }
 
@@ -148,19 +143,16 @@ const deleteButtonPress = () => {
 // logic for the "=" action
 const equalsButtonPress = () => {
     // only proceed if everything exists for the operation
-    if (state.process === "entering b" && state.operatorBtnId && state.a && state.b) {
+    if (state.process === "entering b" && state.operatorBtnId && state.a !== "" && state.b !== "") {
         let result = operate();
         // update if NaN error doesn't exist
         if(result) {
             screen.textContent = result;
-            state = {a: result, b: "", operatorBtnId: "", process: "waiting for operator"}
         } else {
             screen.textContent = "no, try again."
-            state = {a: "", b: "", operatorBtnId: "", process: "entering a"}
-        }     
-    } else if (state.process === "entering a" && state.a !== "") {
-        state = {a: state.a, b: "", operatorBtnId: "", process: "waiting for operator"}
-    }
+        }
+        state = {a: "", b: "", operatorBtnId: "", process: "entering a"}
+    } 
 }
 
 // logic for the "AC" action
