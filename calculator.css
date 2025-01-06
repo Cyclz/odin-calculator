@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: inherit;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator-body {
+    padding: 40px;
+    width: 400px;
+    height: 600px;
+    background-color: grey;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 35px;
+}
+
+#calculator-screen {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    justify-content: start;
+    align-items: center;
+    padding: 5px;
+    font-size: 40px;
+
+}
+
+#calculator-buttons {
+    width: 100%;
+    height: 440px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#calculator-special-buttons {
+    height: 30%;
+    width: 100%;
+    margin: 20px 0px;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#operators, #actions {
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#operators > .button, #actions > .button {
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    background-color: #9edaff;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+
+#calculator-numpad {
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#calculator-numpad > .button {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color:aliceblue;
+    justify-content: center;
+    align-items: center;
+}
