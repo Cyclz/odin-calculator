@@ -1,2 +1,3 @@
 # odin-calculator
-Calculator Project for TOP
+Calculator Project for [The Odin Project](https://theodinproject.com)
+View it [here](https://cyclz.github.io/odin-calculator/) 
